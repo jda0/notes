@@ -1,0 +1,96 @@
+doctype
+html
+	head
+		block title
+			title Untitled
+		style
+			:stylus
+				$font-size = 10pt
+				$line-spacing = 1.5rem
+				$font-family = 'Mission Gothic'
+				$margin = $line-spacing
+				$border-color = #ddd
+				$danger = #e51c23
+				$guidance = #ff9800
+				$key = #ff9800
+				$example = #ff9800
+				$label = #bbb
+
+				html, body
+					font $font-size/$line-spacing $font-family
+					padding ($line-spacing * 3)
+
+				h1, h2
+					font-size 1rem
+					font-weight bold
+					text-transform uppercase
+					margin ($line-spacing * 3) 0 0 0
+					padding 0
+
+				h1:before, h2:before
+					display inline-block
+					position relative
+					left -($margin * 2)
+					margin 0
+					font-weight bold
+					text-align right
+					content '#'
+					width $margin
+
+				h2:before
+					content '##'
+
+				ul, ol
+					margin 0
+
+				li
+					margin 0
+					padding 0
+					list-style-type none
+
+				p, blockquote
+					margin $line-spacing 0 0 $margin
+					padding 0
+
+				blockquote
+					padding 0 0 0 $margin
+					border-left 2px solid $border-color
+					font-weight bold
+					font-style italic
+
+				.caption
+					display block
+					margin $line-spacing 0 0 0
+					font-weight normal
+					font-style normal
+
+				.danger
+					color $danger
+
+				.guidance
+					color $guidance
+
+				.key
+					color $key
+
+				.example
+					color $example
+
+				.nt
+					margin-top ($line-spacing * 2)
+
+				.label
+					display inline-block
+					margin 0 0 0 $margin
+					width $margin * 1.5
+					color $label
+
+	body
+		block content
+			h1 Hello
+
+		script(type="text/javascript", src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML")
+		script(type="text/x-mathjax-config").
+			MathJax.Hub.Config({
+				tex2jax: {inlineMath: [['$$','$$']], displayMath: [['$$$','$$$']]}
+			});
